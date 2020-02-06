@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\FoodRepository")
  */
@@ -17,19 +17,20 @@ class Food
     private $id;
 
     /**
+     * @Assert\NotBlank(message="Le nom doit être renseigné")
      * @ORM\Column(type="string", length=300)
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $category;
-
-    /**
      * @ORM\OneToOne(targetEntity="App\Entity\Picture", mappedBy="food", cascade={"persist", "remove"})
      */
     private $picture;
+
+    /**
+     * @ORM\Column(type="string", length=1500)
+     */
+    private $detail;
 
     public function getId(): ?int
     {
@@ -48,18 +49,6 @@ class Food
         return $this;
     }
 
-    public function getCategory(): ?string
-    {
-        return $this->category;
-    }
-
-    public function setCategory(string $category): self
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
     public function getPicture(): ?Picture
     {
         return $this->picture;
@@ -74,6 +63,18 @@ class Food
         if ($picture->getFood() !== $newFood) {
             $picture->setFood($newFood);
         }
+
+        return $this;
+    }
+
+    public function getDetail(): ?string
+    {
+        return $this->detail;
+    }
+
+    public function setDetail(string $detail): self
+    {
+        $this->detail = $detail;
 
         return $this;
     }

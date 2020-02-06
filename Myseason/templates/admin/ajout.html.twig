@@ -1,0 +1,21 @@
+{% form_theme foodFormView 'bootstrap_4_layout.html.twig' %}
+
+{% extends 'main/layout.html.twig' %}
+
+{% block title %}Element à ajouter{% endblock %}
+
+{% block body %}
+<h1>Création d'un élément</h1>
+
+    <div>
+        {{ form_start(foodFormView) }}
+
+        <div>
+            {{ form_label(serieFormView.name) }}
+
+        </div>
+
+
+    </div>
+
+{% endblock %}

