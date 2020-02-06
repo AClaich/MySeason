@@ -5,17 +5,35 @@
 {% block title %}Element à ajouter{% endblock %}
 
 {% block body %}
-<h1>Création d'un élément</h1>
-
-    <div>
-        {{ form_start(foodFormView) }}
-
+    <div class="container">
+        <h1 style="text-align: center">Création d'un élément</h1>
         <div>
-            {{ form_label(serieFormView.name) }}
-
+            {{ form_start(foodFormView) }}
+            <div style="width: 30%">
+                {{ form_label(foodFormView.name) }}
+                {{ form_widget(foodFormView.name) }}
+                {{ form_errors(foodFormView.name) }}
+            </div>
+            <div style="width: 50%">
+                {{ form_label(foodFormView.detail) }}
+                {{ form_widget(foodFormView.detail) }}
+                {{ form_errors(foodFormView.detail) }}
+            </div>
+            <div style="width: 20%">
+                {{ form_label(foodFormView.category) }}
+                {{ form_widget(foodFormView.category) }}
+                {{ form_errors(foodFormView.category) }}
+            </div>
+            <div>
+                {{ form_label(foodFormView.picture) }}
+                {{ form_widget(foodFormView.picture) }}
+                {{ form_errors(foodFormView.picture) }}
+            </div>
+            <br>
+            {{ form_end(foodFormView) }}
         </div>
-
-
     </div>
-
 {% endblock %}
+
+
+

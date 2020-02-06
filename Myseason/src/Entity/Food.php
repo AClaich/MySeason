@@ -23,7 +23,7 @@ class Food
     private $name;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Picture", mappedBy="food", cascade={"persist", "remove"})
+     * @ORM\Column(type="string", length=1500)
      */
     private $picture;
 
@@ -31,6 +31,12 @@ class Food
      * @ORM\Column(type="string", length=1500)
      */
     private $detail;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="food")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
 
     public function getId(): ?int
     {
@@ -49,20 +55,14 @@ class Food
         return $this;
     }
 
-    public function getPicture(): ?Picture
+    public function getPicture(): ?string
     {
         return $this->picture;
     }
 
-    public function setPicture(?Picture $picture): self
+    public function setPicture(string $picture): self
     {
         $this->picture = $picture;
-
-        // set (or unset) the owning side of the relation if necessary
-        $newFood = null === $picture ? null : $this;
-        if ($picture->getFood() !== $newFood) {
-            $picture->setFood($newFood);
-        }
 
         return $this;
     }
@@ -75,6 +75,18 @@ class Food
     public function setDetail(string $detail): self
     {
         $this->detail = $detail;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
