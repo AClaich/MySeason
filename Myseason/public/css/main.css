@@ -4,3 +4,14 @@
     background: -webkit-linear-gradient(top, #45922E 0%, #BAF5BC 50%, #F1FFED 100%);
     background: linear-gradient(to bottom, #45922E 0%, #BAF5BC 50%, #F1FFED 100%);
 }
+.box-main{
+    border: 5px ridge #1ea042;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+}
+
+img{
+    -webkit-border-radius: 38px;
+    border-radius: 38px;
+    width: 150px;
+}

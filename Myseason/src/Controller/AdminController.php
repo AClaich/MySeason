@@ -28,6 +28,7 @@ class AdminController extends Controller
 
             $file = $foodForm['picture']->getData();
             $file->move('img', $fileName);
+            $food->setPicture('img/'.$fileName);
 
             $entityManager->persist($food);
             $entityManager->flush();

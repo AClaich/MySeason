@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Food;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -12,9 +14,30 @@ class MainController extends Controller
     /**
      * @Route("/", name="home")
      */
-    public function home()
+    public function home(EntityManagerInterface $entityManager)
     {
-        return $this->render('main/layout.html.twig');
+        $foodRepository = $entityManager->getRepository(Food::class);
+
+        $foods = $foodRepository->find5Random();
+        dump($foods);
+
+        return $this->render('main/layout.html.twig', compact('foods'));
+    }
+
+    /**
+     * @Route("/{id}", name="detail", requirements={"id" : "\d+"})
+     */
+    public function detail(EntityManagerInterface $entityManager, $id)
+    {
+        $foodRepository = $entityManager->getRepository(Food::class);
+        $food = $foodRepository->find($id);
+
+        if (empty($food)) {
+            throw $this->createNotFoundException('Cet élément n\'existe pas');
+        } else {
+            return $this->render('main/details.html.twig', compact('food'));
+        }
+        return $this->createNotFoundException('Cet élément n\'existe pas');
     }
 
 

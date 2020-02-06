@@ -6,6 +6,7 @@ use App\Entity\Food;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
+
 /**
  * @method Food|null find($id, $lockMode = null, $lockVersion = null)
  * @method Food|null findOneBy(array $criteria, array $orderBy = null)
@@ -19,6 +20,21 @@ class FoodRepository extends ServiceEntityRepository
         parent::__construct($registry, Food::class);
     }
 
+    public function find5Random()
+    {
+
+        $foodAll = $this->findAll();
+        $select = array();
+        ;
+        while (count($select) < 5) {
+            $rand = rand(0, count($foodAll) - 1);
+            if (!in_array($foodAll[$rand], $select)) {
+                $select[] = $foodAll[$rand];
+
+            }
+        }
+        return $select;
+    }
     // /**
     //  * @return Food[] Returns an array of Food objects
     //  */

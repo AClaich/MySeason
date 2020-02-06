@@ -28,15 +28,21 @@
     {% include 'includes/nav.html.twig' %}
 
     {% block body %}
-        <div class="container border border-warning">
-
-            <h2>Les favoris du moment</h2>
-
-
+        <br>
+        <br>
+        <div class="container">
 
 
+            <div class="box-main ">
+                <h2>Les favoris du moment</h2>
+                <div class="d-flex justify-content-around">
+                    {% for food in foods %}
+                        <a href="{{ path('detail', {'id' : food.id}) }}">
+                            <img src="{{ food.picture }}"></a>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-
     {% endblock %}
 </div>
 </body>

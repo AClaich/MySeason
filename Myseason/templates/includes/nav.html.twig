@@ -1,25 +1,33 @@
-<a href="{{ path('home') }}">
-    <div class="myButton">Accueil</div>
-</a>
-<a href="{{ path('home') }}">
-    <div class="myButton">Catalogue</div>
-</a>
-<a href="{{ path('home') }}">
-    <div class="myButton">Ma liste de course</div>
-</a>
-{% if app.user %}
-    <a href="{{ path('logout') }}">
-        <div class="myButton">Déconnexion</div>
-    </a>
-{% else %}
-    <a href="{{ path('login') }}">
-        <div class="myButton">Connexion/Inscription</div>
-    </a>
-{% endif %}
+<div class="container">
+    <div class="d-flex justify-content-around">
+        <a href="{{ path('home') }}">
+            <div class="myButton">Accueil</div>
+        </a>
+        &nbsp;
+        <a href="{{ path('home') }}">
+            <div class="myButton">Catalogue</div>
+        </a>
+        &nbsp;
+        <a href="{{ path('home') }}">
+            <div class="myButton">Ma liste de course</div>
+        </a>
+        &nbsp;
+        {% if app.user %}
+            <a href="{{ path('logout') }}">
+                <div class="myButton" style="">Déconnexion</div>
+            </a>
+            &nbsp;
+        {% else %}
+            <a href="{{ path('login') }}">
+                <div class="myButton">Connexion/Inscription</div>
+            </a>
+            &nbsp;
+        {% endif %}
 
-{% if is_granted('ROLE_SUPER_ADMIN') %}
-    <a href="{{ path('admin_ajout') }}">
-        <div class="myButton">Ajouter un élément</div>
-    </a>
-{% endif %}
-
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+            <a href="{{ path('admin_ajout') }}">
+                <div class="myButton">Ajouter un élément</div>
+            </a>
+        {% endif %}
+    </div>
+</div>

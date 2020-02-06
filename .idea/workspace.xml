@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b55c3bee-9347-4a6e-bcd0-3c5db8e862d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Myseason/public/css/ajout.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Myseason/public/js/ajout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Myseason/templates/main/details.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Myseason/templates/user/course.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Myseason/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/Myseason/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Myseason/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Myseason/src/Controller/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Myseason/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/Myseason/src/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Myseason/src/Entity/Food.php" beforeDir="false" afterPath="$PROJECT_DIR$/Myseason/src/Entity/Food.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Myseason/src/Entity/Picture.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Myseason/src/Form/AjoutType.php" beforeDir="false" afterPath="$PROJECT_DIR$/Myseason/src/Form/AjoutType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Myseason/src/Repository/PictureRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Myseason/templates/admin/ajout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/Myseason/templates/admin/ajout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Myseason/src/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Myseason/src/Controller/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Myseason/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Myseason/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Myseason/src/Repository/FoodRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Myseason/src/Repository/FoodRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Myseason/templates/includes/nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/Myseason/templates/includes/nav.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Myseason/templates/main/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/Myseason/templates/main/layout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Myseason/templates/main/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/Myseason/templates/main/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +73,7 @@
       <workItem from="1580824686375" duration="727000" />
       <workItem from="1580825505991" duration="79000" />
       <workItem from="1580825594090" duration="12312000" />
-      <workItem from="1580901605620" duration="28477000" />
+      <workItem from="1580901605620" duration="36966000" />
     </task>
     <task id="LOCAL-00001" summary="First commit by phpStorm">
       <created>1580824798360</created>
@@ -147,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580976586658</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="commit pause midi">
+      <created>1580987633559</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1580987633559</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +168,8 @@
     <MESSAGE value="Le commit de la pause dej" />
     <MESSAGE value="commit after register completed" />
     <MESSAGE value="commit after Category.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit after Category.php" />
+    <MESSAGE value="commit pause midi" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit pause midi" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="72" key="#Deployment" timestamp="1580824465166">
@@ -182,10 +188,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="168" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1580921822483" />
-    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1580987598465">
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1580987632832">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1580987598465" />
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1580987632832" />
     <state x="545" y="326" key="ComposerInitDialogKey" timestamp="1580824702030">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -203,10 +209,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1580985140785" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1580976587957">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1580987636966">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1580976587957" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1580987636966" />
     <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1580901615956">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
