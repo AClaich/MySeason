@@ -3,12 +3,21 @@
 {% block title %}{{ food.name }}{% endblock %}
 
 {% block body %}
-<div class="container">
+    <div class="container">
 
-
+        <br>
         <h1 style="text-align: center">{{ food.name }}</h1>
+        <br>
+        <div>
+            <img src="{{ food.picture }}" style="margin-left: auto; margin-right: auto; display:block">
+        </div>
+
+        <div>
+            <h3 style="text-decoration: underline">Détails: </h3>
+            <p>{{ food.detail }}</p>
+        </div>
+        <br>
 
 
-
-</div>
+    </div>
 {% endblock %}

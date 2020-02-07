@@ -1,17 +1,28 @@
-.inside{
+.inside {
     background: #45922E;
     background: -moz-linear-gradient(top, #45922E 0%, #BAF5BC 50%, #F1FFED 100%);
     background: -webkit-linear-gradient(top, #45922E 0%, #BAF5BC 50%, #F1FFED 100%);
     background: linear-gradient(to bottom, #45922E 0%, #BAF5BC 50%, #F1FFED 100%);
+    height: 1080px;
 }
-.box-main{
+
+.box-main {
     border: 5px ridge #1ea042;
     -webkit-border-radius: 20px;
     border-radius: 20px;
 }
 
-img{
+img {
     -webkit-border-radius: 38px;
-    border-radius: 38px;
+    border-radius: 50px;
     width: 150px;
+}
+
+.box-cat{
+    border: 5px ridge #1ea042;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }

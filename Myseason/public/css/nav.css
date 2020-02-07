@@ -1,6 +1,40 @@
 .myButton {
-    color: rgb(253, 255, 255); font-size: 16px; line-height: 16px; padding: 11px; border-radius: 23px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(38, 164, 84) 0%, rgb(165, 203, 160) 50%, rgb(38, 164, 84) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 3px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
+    color: rgb(253, 255, 255);
+    font-size: 16px;
+    line-height: 16px;
+    padding: 11px;
+    border-radius: 23px;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(to right, rgb(38, 164, 84) 0%, rgb(165, 203, 160) 50%, rgb(38, 164, 84) 100%);
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 3px;
+    border: 2px solid rgb(28, 110, 164);
+    display: inline-block;
+}
+
 .myButton:hover {
-    background: #1ea042; }
+    color: rgb(253, 255, 255);
+    font-size: 16px;
+    line-height: 16px;
+    padding: 11px;
+    border-radius: 23px;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(to right, rgb(39, 208, 120) 0%, rgb(188, 227, 183) 50%, rgb(46, 217, 116) 100%);
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 3px;
+    border: 2px solid rgb(28, 110, 164);
+    display: inline-block;
+}
+
+
 .myButton:active {
-    background: #15742e; }
+    background: #15742e;
+}

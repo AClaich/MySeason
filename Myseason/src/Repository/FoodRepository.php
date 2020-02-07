@@ -25,7 +25,7 @@ class FoodRepository extends ServiceEntityRepository
 
         $foodAll = $this->findAll();
         $select = array();
-        ;
+
         while (count($select) < 5) {
             $rand = rand(0, count($foodAll) - 1);
             if (!in_array($foodAll[$rand], $select)) {

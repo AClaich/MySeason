@@ -6,6 +6,7 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,7 +19,7 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username', TextType::class,['label' => 'Identifiant'])
+            ->add('username', TextType::class, ['label' => 'Identifiant'])
             ->add('agreeTerms', CheckboxType::class, ['label' => 'Accepter les conditions*',
                 'mapped' => false,
                 'constraints' => [
@@ -27,9 +28,12 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('plainPassword', PasswordType::class, ['label' => 'Mot de passe',
+            ->add('plainPassword', RepeatedType::class, ['type' => PasswordType::class, 'first_options'  => ['label' => 'Mot de passe'],
+                'second_options' => ['label' => 'Confirmez votre mot de passe'],
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
+                'invalid_message' => 'Les mots de passe doivent correspondre',
+                'required' => true,
                 'mapped' => false,
                 'constraints' => [
                     new NotBlank([
@@ -39,11 +43,10 @@ class RegistrationFormType extends AbstractType
                         'min' => 6,
                         'minMessage' => 'Your password should be at least {{ limit }} characters',
                         // max length allowed by Symfony for security reasons
-                        'max' => 4096,
+                        'max' => 1060,
                     ]),
                 ],
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Food;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
@@ -19,7 +20,6 @@ class MainController extends Controller
         $foodRepository = $entityManager->getRepository(Food::class);
 
         $foods = $foodRepository->find5Random();
-        dump($foods);
 
         return $this->render('main/layout.html.twig', compact('foods'));
     }
@@ -37,7 +37,7 @@ class MainController extends Controller
         } else {
             return $this->render('main/details.html.twig', compact('food'));
         }
-        return $this->createNotFoundException('Cet élément n\'existe pas');
+        throw $this->createNotFoundException('Cet élément n\'existe pas');
     }
 
 
@@ -56,4 +56,13 @@ class MainController extends Controller
         return $this->render('main/login.html.twig', ['last_username' => $lastUsername, 'error' => $error,]);
     }
 
+    /**
+     * @Route("/catalogue", name="catalogue")
+     */
+    public function catalogue(EntityManagerInterface $entityManager)
+    {
+        $foodRepository = $entityManager->getRepository(Food::class);
+        $foods = $foodRepository->findAll();
+        return $this->render('main/catalogue.html.twig', compact('foods'));
+    }
 }

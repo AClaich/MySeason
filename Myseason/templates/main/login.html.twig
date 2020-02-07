@@ -4,28 +4,33 @@
 
 {% block body %}
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-    <h1>Connexion</h1>
-<div class="container"></div>
-    <form action="{{ path('login') }}" method="post">
+    <br>
+    <div class="container">
 
-              <label for="username">Identifiant </label>
+        <h1 style="text-align: center">Connexion</h1>
+        <div class="container"></div>
+        <form action="{{ path('login') }}" method="post" style="text-align: center;align-items: center">
 
-            <input type="text" class="form-control" style="width: 25%" id="username" name="_username" placeholder="Votre identifiant" value="{{ last_username }}"/>
+            <label for="username">Identifiant </label>
+
+            <input type="text" class="form-control" style="width: 25%; margin-right: auto;margin-left: auto" id="username" name="_username"
+                   placeholder="Votre identifiant" value="{{ last_username }}"/>
 
             <br>
             <label for="password">Mot de passe </label>
-            <input type="password" class="form-control" style="width: 25%" id="password" name="_password" placeholder="Votre mot de passe"/>
+            <input type="password" class="form-control" style="width: 25%; margin-right: auto;margin-left: auto" id="password" name="_password"
+                   placeholder="Votre mot de passe"/>
             <br>
             <button type="submit" class="myButton">Valider</button>
-    </form>
+        </form>
 
-    <br>
-    <hr>
-    <div class="inline">
-        <h3>Nouveau?</h3>
-        <a href="{{ path('app_register') }}">
-            <div class="myButton">Inscription</div>
-        </a>
+        <br>
+        <hr>
+        <div class="d-flex justify-content-center">
+            <h3>Nouveau?</h3>
+            <a href="{{ path('app_register') }}">
+                <div class="myButton">Inscription</div>
+            </a>
+        </div>
     </div>
-
 {% endblock %}

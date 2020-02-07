@@ -8,8 +8,9 @@
 
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
-
-    <title>{% block title %}Document{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ asset('img/mini.PNG') }}">
+    <title>{% block title %}Accueil{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -35,10 +36,12 @@
 
             <div class="box-main ">
                 <h2>Les favoris du moment</h2>
-                <div class="d-flex justify-content-around">
+                <div class="d-flex flex-wrap">
                     {% for food in foods %}
+                        <span style="margin-left: auto;margin-right: auto">
                         <a href="{{ path('detail', {'id' : food.id}) }}">
                             <img src="{{ food.picture }}"></a>
+                            </span>
                     {% endfor %}
                 </div>
             </div>
