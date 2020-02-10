@@ -5,7 +5,9 @@ namespace App\Controller;
 use App\Entity\Food;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
@@ -15,8 +17,20 @@ class MainController extends Controller
     /**
      * @Route("/", name="home")
      */
-    public function home(EntityManagerInterface $entityManager)
+    public function home(EntityManagerInterface $entityManager, Request $request)
     {
+        if ($this->container->get('security.authorization_checker')->isGranted('ROLE_USER')) {
+            $response = new Response(
+                '',
+                Response::HTTP_OK,
+                ['content-type' => 'text/html']
+            );
+
+            $response->headers->setCookie(new Cookie('lastUsername', $this->getUser()->getUsername()));
+
+            $response->prepare($request);
+            $response->send();
+        }
         $foodRepository = $entityManager->getRepository(Food::class);
 
         $foods = $foodRepository->find5Random();
@@ -44,7 +58,7 @@ class MainController extends Controller
     /**
      * @Route("/login", name="login")
      */
-    public function login(AuthenticationUtils $authenticationUtils)
+    public function login(AuthenticationUtils $authenticationUtils, Request $request)
     {
         //get the login error if there is one
 
@@ -53,7 +67,8 @@ class MainController extends Controller
         //last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('main/login.html.twig', ['last_username' => $lastUsername, 'error' => $error,]);
+        return $this->render('main/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+
     }
 
     /**

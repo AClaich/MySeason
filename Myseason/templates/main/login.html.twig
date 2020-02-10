@@ -11,14 +11,21 @@
         <div class="container"></div>
         <form action="{{ path('login') }}" method="post" style="text-align: center;align-items: center">
 
-            <label for="username">Identifiant </label>
-
-            <input type="text" class="form-control" style="width: 25%; margin-right: auto;margin-left: auto" id="username" name="_username"
-                   placeholder="Votre identifiant" value="{{ last_username }}"/>
+            <label for="username">Identifiant</label>
+            {% if app.request.cookies.get('lastUsername') != null %}
+                <input type="text" class="form-control" style="width: 25%; margin-right: auto;margin-left: auto"
+                       id="username" name="_username"
+                       placeholder="Votre identifiant" value="{{ app.request.cookies.get('lastUsername') }}"/>
+            {% else %}
+                <input type="text" class="form-control" style="width: 25%; margin-right: auto;margin-left: auto"
+                       id="username" name="_username"
+                       placeholder="Votre identifiant" value="{{ last_username }}"/>
+            {% endif %}
 
             <br>
             <label for="password">Mot de passe </label>
-            <input type="password" class="form-control" style="width: 25%; margin-right: auto;margin-left: auto" id="password" name="_password"
+            <input type="password" class="form-control" style="width: 25%; margin-right: auto;margin-left: auto"
+                   id="password" name="_password"
                    placeholder="Votre mot de passe"/>
             <br>
             <button type="submit" class="myButton">Valider</button>
@@ -27,8 +34,8 @@
         <br>
         <hr>
         <div class="d-flex justify-content-center">
-            <h3>Nouveau?</h3>
-            <a href="{{ path('app_register') }}">
+            <h3 style="margin-right: 15px; margin-left: auto">Nouveau?</h3>
+            <a href="{{ path('app_register') }}" style="margin-right: auto; margin-left: 15px">
                 <div class="myButton">Inscription</div>
             </a>
         </div>
